@@ -61,21 +61,28 @@ function anchorTagSocialMediaCreation(socialMedia) {
 
 export default function decorate(block) {
   // find the article content div
-  const articleContent = document.querySelector('.article-content');
+  const articleContent = document.querySelector('.tags-container');
+  articleContent.classList.add('article-content');
   const contentDivs = articleContent.querySelectorAll(':scope > div');
 
-  const articleContentWrapper = createTag('div', { class: 'article-content-wrapper' });
+  const articleContentWrapper = createTag('div', {
+    class: 'article-content-wrapper',
+  });
   contentDivs.forEach((div) => {
     articleContentWrapper.append(div);
   });
 
-  const articleMainWrapper = createTag('div', { class: 'article-main-wrapper' });
+  const articleMainWrapper = createTag('div', {
+    class: 'article-main-wrapper',
+  });
   articleMainWrapper.append(block);
   articleMainWrapper.append(articleContentWrapper);
   articleContent.textContent = '';
   articleContent.append(articleMainWrapper);
 
-  const blogContentLink = createTag('div', { class: 'blog-content-links' });
+  const blogContentLink = createTag('div', {
+    class: 'blog-content-links',
+  });
   blogContentLink.setAttribute('id', 'blog-content-link');
   block.textContent = '';
   block.append(blogContentLink);
@@ -87,7 +94,9 @@ export default function decorate(block) {
   });
 
   const socialLinks = ['linkedin', 'twitter', 'facebook', 'share'];
-  const socialShareLinks = createTag('div', { class: 'social-share-links' });
+  const socialShareLinks = createTag('div', {
+    class: 'social-share-links',
+  });
   socialShareLinks.setAttribute('id', 'social-share-links-id');
 
   socialLinks.forEach((item) => {
