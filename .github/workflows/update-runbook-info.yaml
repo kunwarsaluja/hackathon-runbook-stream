@@ -27,7 +27,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit and push changes
-          uses: stefanzweifel/git-auto-commit-action@v4
-          with:
-            file_pattern: 'runbook/*.json'
-            commit_message: "Update Runbook info"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: 'runbook/*.json'
+          commit_message: "Update Runbook info"
