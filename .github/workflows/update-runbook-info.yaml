@@ -24,7 +24,7 @@ jobs:
       - name: Run script
         working-directory: ./.github/runbook
         run: |
-          node .github/runbook/generate-runbook.mjs
+          node generate-runbook.mjs
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit and push changes
