@@ -22,6 +22,7 @@ jobs:
         working-directory: ./.github/runbook
         run: npm install
       - name: Run script
+        working-directory: ./.github/runbook
         run: |
           node .github/runbook/generate-runbook.mjs
         env:
