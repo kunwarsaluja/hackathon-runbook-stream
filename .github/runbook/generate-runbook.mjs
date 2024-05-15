@@ -50,6 +50,21 @@ const getEnvironmentInfo = async () => {
   return envInfo;
 };
 
+const getPluginInfo = async () => {
+  const resp = await fetch(`https://admin.hlx.page/sidekick/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}/main/config.json`);
+  const json = await resp.json();
+
+  const plugins = json.plugins || [];
+
+  const pluginTitles = plugins
+    .filter(plugin => plugin.title) // Filter out plugins without a title
+    .map(plugin => plugin.title);
+
+  return {
+    pluginTitles: pluginTitles
+  };
+};
+
 const getFirstCommit = async (octokit) => {
   const commits = await octokit.paginate("GET /repos/{owner}/{repo}/commits", {
     ...OCTOKIT_BASE_PARAMS,
@@ -65,6 +80,7 @@ const main = async (token, targetDirectory) => {
 
   const data = {};
   data.environmentInfo = await getEnvironmentInfo();
+  data.pluginInfo = await getPluginInfo();
   data.firstCommit = await getFirstCommit(octokit);
 
   try {
