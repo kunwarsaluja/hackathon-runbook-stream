@@ -5,7 +5,9 @@ jobs:
   use_api_via_script:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      statuses: read
+      pull-requests: read
+      contents: write
     steps:
       - name: Check out repo content
         uses: actions/checkout@v4
