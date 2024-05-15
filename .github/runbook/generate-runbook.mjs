@@ -26,18 +26,28 @@ const readRepoFileContents = async (filePath) => {
 };
 
 const getEnvironmentInfo = async () => {
+  const envInfo = {
+    githubUrl: `https://github.com/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}`,
+    sharepointUrl: '',
+    previewUrl: `http://main--${OCTOKIT_BASE_PARAMS.repo}--${OCTOKIT_BASE_PARAMS.owner}.hlx.page/`,
+    liveUrl: `http://main--${OCTOKIT_BASE_PARAMS.repo}--${OCTOKIT_BASE_PARAMS.owner}.hlx.live/`,
+  };
+
   const fsTab = await readRepoFileContents('fstab.yaml');
-  const data = YAML.parse(fsTab);
+  if (fsTab) {
+    const data = YAML.parse(fsTab);
+    envInfo.sharepointUrl = data.mountpoints['/'];
+  }
+
 
   const resp = await fetch(`https://admin.hlx.page/status/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}/main`);
-  const json = await resp.json();
+  if (resp.ok) {
+    const json = await resp.json();
+    envInfo.previewUrl = json.preview.url;
+    envInfo.liveUrl = json.live.url;
+  }
 
-  return {
-    previewUrl: json.preview.url,
-    liveUrl: json.live.url,
-    githubUrl: `https://github.com/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}`,
-    sharepointUrl: data.mountpoints['/'],
-  };
+  return envInfo;
 };
 
 const getFirstCommit = async (octokit) => {
