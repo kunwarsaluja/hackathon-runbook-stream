@@ -1,13 +1,22 @@
+name: Update Runbook Info
 on:
   workflow_dispatch:
 jobs:
   use_api_via_script:
     runs-on: ubuntu-latest
     permissions:
-      issues: read
+      statuses: read
+      pull-requests: read
+      contents: write
     steps:
       - name: Check out repo content
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Configure git
+        run: |
+          git config user.name "GitHubActions"
+          git config user.email "<>"
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -17,7 +26,13 @@ jobs:
         working-directory: ./.github/runbook
         run: npm install
       - name: Run script
+        working-directory: ./.github/runbook
         run: |
-          node .github/runbook/generate-runbook.mjs
+          node generate-runbook.mjs
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: 'runbook/*.json'
+          commit_message: "Update Runbook info"

@@ -79,6 +79,7 @@ const getFirstCommit = async (octokit) => {
   return commits.pop();
 };
 
+
 const getBlockInfo = async (octokit) => {
   const blocks = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
     ...OCTOKIT_BASE_PARAMS,
@@ -126,6 +127,7 @@ const getCDNInfo = async (prodUrl) => {
   return cname['payload'];
 };
 
+
 const main = async (token, targetDirectory) => {
   const octokit = new Octokit({
     auth: token,
@@ -135,11 +137,13 @@ const main = async (token, targetDirectory) => {
   data.environmentInfo = await getEnvironmentInfo();
   data.pluginInfo = await getPluginInfo();
   data.firstCommit = await getFirstCommit(octokit);
+
    /* disabled for current runbook iteration
   data.blocks = await getBlockInfo(octokit);
   */
   data.customIndexDefinitions = await getHelixQueryYaml(octokit);
   data.cdn = await getCDNInfo(data.environmentInfo.prodUrl);
+
   try {
     fs.access(targetDirectory, fs.constants.W_OK);
   } catch {

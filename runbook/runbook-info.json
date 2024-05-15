@@ -85,6 +85,7 @@
       "site_admin": false
     },
     "parents": []
+
   },
   "customIndexDefinitions": {
     "customIndexDefinitions": true,
@@ -93,4 +94,7 @@
   "cdn": [
     "cdn.adobeaemcloud.com"
   ]
+
+  }
+
 }
