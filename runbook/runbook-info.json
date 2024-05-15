@@ -3,7 +3,8 @@
     "githubUrl": "https://github.com/kunwarsaluja/hackathon-runbook-stream",
     "sharepointUrl": "https://adobe.sharepoint.com/:f:/r/sites/HelixProjects/Shared%20Documents/sites/merative",
     "previewUrl": "https://main--hackathon-runbook-stream--kunwarsaluja.hlx.page/",
-    "liveUrl": "https://main--hackathon-runbook-stream--kunwarsaluja.hlx.live/"
+    "liveUrl": "https://main--hackathon-runbook-stream--kunwarsaluja.hlx.live/",
+    "prodUrl": "www.merative.com"
   },
   "firstCommit": {
     "sha": "157df56d2e1af3abacbfd570a89ddf7c4f940881",

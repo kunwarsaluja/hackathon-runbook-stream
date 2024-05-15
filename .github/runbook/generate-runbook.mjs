@@ -31,6 +31,7 @@ const getEnvironmentInfo = async () => {
     sharepointUrl: '',
     previewUrl: `http://main--${OCTOKIT_BASE_PARAMS.repo}--${OCTOKIT_BASE_PARAMS.owner}.hlx.page/`,
     liveUrl: `http://main--${OCTOKIT_BASE_PARAMS.repo}--${OCTOKIT_BASE_PARAMS.owner}.hlx.live/`,
+    prodUrl: '',
   };
 
   const fsTab = await readRepoFileContents('fstab.yaml');
@@ -39,6 +40,11 @@ const getEnvironmentInfo = async () => {
     envInfo.sharepointUrl = data.mountpoints['/'];
   }
 
+  const skConf = await readRepoFileContents('/tools/sidekick/config.json');
+  if (skConf) {
+    const skConfData = JSON.parse(skConf);
+    envInfo.prodUrl = skConfData.host;
+  }
 
   const resp = await fetch(`https://admin.hlx.page/status/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}/main`);
   if (resp.ok) {
