@@ -83,7 +83,7 @@ const getBoilerplateCustomizations = async (octokit) => {
     ...OCTOKIT_BASE_PARAMS,
     path: `/${coreLibFile}`,
   });
-  const firstCommit = coreLibCommits.pop();
+  const firstCommit = coreLibCommits[coreLibCommits.length - 1];
   const firstFileContents = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
     ...OCTOKIT_BASE_PARAMS,
     path: `/${coreLibFile}`,
@@ -93,7 +93,7 @@ const getBoilerplateCustomizations = async (octokit) => {
   const patch = createTwoFilesPatch('initialCommit', 'current', origFileContents, coreLibFileContents);
 
   return {
-    coreLibrary: coreLibFile,
+    coreLibrary: coreLibFile.replace('scripts/', ''),
     patch,
     commits: {
       count: coreLibCommits.length,
