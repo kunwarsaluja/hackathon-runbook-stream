@@ -1,0 +1,8 @@
+{
+  "name": "generate-runbook",
+  "version": "1.0.0",
+  "dependencies": {
+    "octokit": "^4.0.2"
+  },
+  "type": "module"
+}

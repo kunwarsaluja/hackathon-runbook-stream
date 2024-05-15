@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+jobs:
+  use_api_via_script:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+    steps:
+      - name: Check out repo content
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16.17.0'
+          cache: npm
+      - name: Install dependencies
+        working-directory: ./.github/runbook
+        run: npm install
+      - name: Run script
+        run: |
+          node .github/runbook/generate-runbook.mjs
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
