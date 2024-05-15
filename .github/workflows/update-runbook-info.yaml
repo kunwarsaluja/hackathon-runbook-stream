@@ -1,3 +1,4 @@
+name: Update Runbook Info
 on:
   workflow_dispatch:
 jobs:
@@ -8,6 +9,10 @@ jobs:
     steps:
       - name: Check out repo content
         uses: actions/checkout@v4
+      - name: Configure git
+      run: |
+        git config user.name "GitHubActions"
+        git config user.email "<>"
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -21,3 +26,8 @@ jobs:
           node .github/runbook/generate-runbook.mjs
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push changes
+          uses: stefanzweifel/git-auto-commit-action@v5
+          with:
+            file_pattern: 'runbook/*.json'
+            commit_message: "Update Runbook info"

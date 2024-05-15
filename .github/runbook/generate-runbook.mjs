@@ -1,5 +1,6 @@
 
 import { Octokit } from "octokit";
+import fs from 'fs';
 
 const main = async (token, targetDirectory) => {
   const octokit = new Octokit({
@@ -10,7 +11,12 @@ const main = async (token, targetDirectory) => {
     owner: "kunwarsaluja",
     repo: "hackathon-runbook-stream",
   });
-  console.log(res.data);
+  const data = JSON.stringify(res.data);
+
+  if (!fs.existsSync(targetDirectory)) {
+    fs.mkdirSync(targetDirectory);
+  }
+  fs.writeFileSync(`${targetDirectory}/test.json`, data);
 };
 
 const token = process.argv[2];
