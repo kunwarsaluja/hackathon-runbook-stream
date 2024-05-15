@@ -20,4 +20,4 @@ const main = async (token, targetDirectory) => {
 };
 
 const token = process.argv[2];
-main(process.env.TOKEN, '../../runbook').catch((e) => console.error(e));
+main(process.env.TOKEN, '/runbook').catch((e) => console.error(e));
