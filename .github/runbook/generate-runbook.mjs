@@ -25,18 +25,18 @@ const checkSitemap = async (token) => {
   });
 
   try {
-    await octokit.request(
+    const resp = await octokit.request(
       'GET /repos/{owner}/{repo}/contents/helix-sitemap.yaml',
       {
         owner: owner,
         repo: repo,
       }
     );
-    if (!response.ok) {
+    if (!resp.ok) {
       //throw new Error('Network response was not OK');
       console.log('customer sitemap is not available');
     }
-    const sitemapYaml = await response.data();
+    const sitemapYaml = await resp.data();
     console.log(sitemapYaml);
   } catch (error) {
     console.error('error occured while fetching the sitemap config', error);
