@@ -18,7 +18,7 @@ const readRepoFileContents = async (filePath) => {
       encoding: 'utf8',
       flag: 'r',
     });
-  return fileContents;
+    return fileContents;
   } catch (e) {
     console.error('failed reading file.', e)
     return false;
@@ -71,12 +71,17 @@ const getPluginInfo = async () => {
   };
 };
 
-const getFirstCommit = async (octokit) => {
-  const commits = await octokit.paginate("GET /repos/{owner}/{repo}/commits", {
+const getBoilerplateCustomizations = async (octokit) => {
+  let coreLibFile = 'scripts/aem.js';
+  const aemJS = await readRepoFileContents(coreLibFile);
+  if (!aemJS) {
+    coreLibFile = 'scripts/lib-franklin.js';
+  }
+  const coreLibCommits = await octokit.paginate("GET /repos/{owner}/{repo}/commits", {
     ...OCTOKIT_BASE_PARAMS,
-    path: '/scripts/scripts.js',
+    path: `/${coreLibFile}`,
   });
-  return commits.pop();
+  return coreLibCommits;
 };
 
 
@@ -136,7 +141,7 @@ const main = async (token, targetDirectory) => {
   const data = {};
   data.environmentInfo = await getEnvironmentInfo();
   data.pluginInfo = await getPluginInfo();
-  data.firstCommit = await getFirstCommit(octokit);
+  data.boilerplateCustomizations = await getBoilerplateCustomizations(octokit);
 
    /* disabled for current runbook iteration
   data.blocks = await getBlockInfo(octokit);
