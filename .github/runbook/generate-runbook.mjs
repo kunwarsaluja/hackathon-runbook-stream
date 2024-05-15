@@ -1,5 +1,6 @@
 
 import { Octokit } from "octokit";
+import fs from 'fs';
 
 const main = async (token, targetDirectory) => {
   const octokit = new Octokit({
@@ -10,7 +11,13 @@ const main = async (token, targetDirectory) => {
     owner: "kunwarsaluja",
     repo: "hackathon-runbook-stream",
   });
-  //console.log(res.data);
+  const data = JSON.stringify(res.data);
+
+  if (!fs.existsSync(targetDirectory)) {
+    fs.mkdirSync(targetDirectory);
+  }
+  fs.writeFileSync(`${targetDirectory}/test.json`, data);
+
   const blocks = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
     owner: "kunwarsaluja",
     repo: "hackathon-runbook-stream",
@@ -19,9 +26,17 @@ const main = async (token, targetDirectory) => {
       'X-GitHub-Api-Version': '2022-11-28'
     }
   });
-  console.log(blocks.data);
-
+  const blockName = [];
+  Object.entries(JSON.stringify(blocks.data)).forEach((entry) => {
+    const [key, value] = entry;
+    if(key === 'name') {
+      blockName.push(value);
+    }
+  });
+  fs.appendFileSync(`${targetDirectory}/test.json`, blockName.join('\n'));
 };
 
 const token = process.argv[2];
-main(process.env.TOKEN).catch((e) => console.error(e));
+main(process.env.TOKEN, '../../runbook').catch((e) => console.error(e));
+
+
