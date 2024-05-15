@@ -85,5 +85,16 @@
       "site_admin": false
     },
     "parents": []
+
+  },
+  "customIndexDefinitions": {
+    "customIndexDefinitions": true,
+    "URL": "https://raw.githubusercontent.com/kunwarsaluja/hackathon-runbook-stream/main/helix-query.yaml"
+  },
+  "cdn": [
+    "cdn.adobeaemcloud.com"
+  ]
+
   }
+
 }

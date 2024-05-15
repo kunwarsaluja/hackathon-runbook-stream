@@ -79,6 +79,55 @@ const getFirstCommit = async (octokit) => {
   return commits.pop();
 };
 
+
+const getBlockInfo = async (octokit) => {
+  const blocks = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+    ...OCTOKIT_BASE_PARAMS,
+    path: 'blocks',
+  });
+  const blockName = [];
+  Object.entries((blocks.data)).forEach((entry) => {
+    const [key, value] = entry;
+    blockName.push({'name' : value['name']});
+  });
+  return blockName;
+};
+
+const getHelixQueryYaml = async (octokit) => {
+  let customIndexDefinitions = false;
+  try {
+      const resp = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+      ...OCTOKIT_BASE_PARAMS,
+      path: 'helix-query.yaml',
+    });
+    if(resp.status === 200) {
+      customIndexDefinitions = true;
+    }
+  } catch (e) {
+    console.error(e.message);
+  }
+  if (customIndexDefinitions) {
+    return {'customIndexDefinitions' : true, 'URL' : `https://raw.githubusercontent.com/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}/main/helix-query.yaml`};
+  } else {
+    return {'customIndexDefinitions' : false};
+  }
+};
+
+const getCDNInfo = async (prodUrl) => { 
+  const payload = { 'hostname': prodUrl};
+  const response = await fetch('https://316182-discovercdn-stage.adobeioruntime.net/api/v1/web/discoverDNS/findCNAME', {
+    method: 'POST',
+    referrerPolicy: 'no-referrer',
+    headers: {
+    'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+  const cname = await response.json();
+  return cname['payload'];
+};
+
+
 const main = async (token, targetDirectory) => {
   const octokit = new Octokit({
     auth: token,
@@ -88,6 +137,12 @@ const main = async (token, targetDirectory) => {
   data.environmentInfo = await getEnvironmentInfo();
   data.pluginInfo = await getPluginInfo();
   data.firstCommit = await getFirstCommit(octokit);
+
+   /* disabled for current runbook iteration
+  data.blocks = await getBlockInfo(octokit);
+  */
+  data.customIndexDefinitions = await getHelixQueryYaml(octokit);
+  data.cdn = await getCDNInfo(data.environmentInfo.prodUrl);
 
   try {
     fs.access(targetDirectory, fs.constants.W_OK);
