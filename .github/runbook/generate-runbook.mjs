@@ -27,7 +27,7 @@ const main = async (token, targetDirectory) => {
     }
   });
   const blockName = [];
-  Object.entries(JSON.stringify(blocks.data)).forEach((entry) => {
+  Object.entries((blocks.data)).forEach((entry) => {
     const [key, value] = entry;
     if(key === 'name') {
       blockName.push(value);
