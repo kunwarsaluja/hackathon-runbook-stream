@@ -10,7 +10,7 @@ const main = async (token, targetDirectory) => {
     owner: "kunwarsaluja",
     repo: "hackathon-runbook-stream",
   });
-  console.log(res.data);
+  //console.log(res.data);
   const blocks = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
     owner: "kunwarsaluja",
     repo: "hackathon-runbook-stream",
