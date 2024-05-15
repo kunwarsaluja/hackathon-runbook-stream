@@ -13,8 +13,16 @@ const OCTOKIT_BASE_PARAMS = {
 };
 
 const readRepoFileContents = async (filePath) => {
-  const fileContents = await fs.readFile(`../../${filePath}`, { encoding: 'utf8' });
+  try {
+    const fileContents = await fs.readFile(`../../${filePath}`, {
+      encoding: 'utf8',
+      flag: 'r',
+    });
   return fileContents;
+  } catch (e) {
+    console.error('failed reading file.', e)
+    return false;
+  }
 };
 
 const getEnvironmentInfo = async () => {
