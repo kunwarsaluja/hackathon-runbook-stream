@@ -12,8 +12,13 @@ const OCTOKIT_BASE_PARAMS = {
   }
 };
 
+const readRepoFileContents = async (filePath) => {
+  const fileContents = await fs.readFile(`../../${filePath}`, { encoding: 'utf8' });
+  return fileContents;
+};
+
 const getEnvironmentInfo = async () => {
-  const fsTab = await fs.readFile('../../fstab.yaml', { encoding: 'utf8' });
+  const fsTab = await readRepoFileContents('fstab.yaml');
   const data = YAML.parse(fsTab);
 
   const resp = await fetch(`https://admin.hlx.page/status/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}/main`);
