@@ -33,6 +33,7 @@ const main = async (token, targetDirectory) => {
       blockName.push(value);
     }
   });
+  console.log(blockName);
   fs.appendFileSync(`${targetDirectory}/test.json`, blockName.join('\n'));
 };
 
