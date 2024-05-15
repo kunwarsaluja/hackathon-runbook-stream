@@ -34,7 +34,7 @@ const checkSitemap = async (token) => {
     );
     if (!res.ok) {
       //throw new Error('Network response was not OK');
-      console.log('customer sitemap is not available');
+      console.log(res.status);
     } else {
       const sitemapYaml = await JSON.stringify(res.data);
       console.log(sitemapYaml);
