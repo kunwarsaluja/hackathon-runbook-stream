@@ -3,6 +3,7 @@ import { Octokit } from "octokit";
 import { promises as fs } from 'fs';
 import YAML from 'yaml'
 import fetch from 'node-fetch';
+import { createTwoFilesPatch } from 'diff';
 
 const OCTOKIT_BASE_PARAMS = {
   owner: "kunwarsaluja",
@@ -73,15 +74,38 @@ const getPluginInfo = async () => {
 
 const getBoilerplateCustomizations = async (octokit) => {
   let coreLibFile = 'scripts/aem.js';
-  const aemJS = await readRepoFileContents(coreLibFile);
-  if (!aemJS) {
+  let coreLibFileContents = await readRepoFileContents(coreLibFile);
+  if (!coreLibFileContents) {
     coreLibFile = 'scripts/lib-franklin.js';
+    coreLibFileContents = await readRepoFileContents(coreLibFile);
   }
-  const coreLibCommits = await octokit.paginate("GET /repos/{owner}/{repo}/commits", {
+  const coreLibCommits = await octokit.paginate('GET /repos/{owner}/{repo}/commits', {
     ...OCTOKIT_BASE_PARAMS,
     path: `/${coreLibFile}`,
   });
-  return coreLibCommits;
+  const firstCommit = coreLibCommits.pop();
+  const firstFileContents = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+    ...OCTOKIT_BASE_PARAMS,
+    path: `/${coreLibFile}`,
+    ref: firstCommit.sha,
+  });
+  const origFileContents = Buffer.from(firstFileContents.data.content, 'base64').toString('utf-8');
+  const patch = createTwoFilesPatch('initialCommit', 'current', origFileContents, coreLibFileContents);
+
+  return {
+    coreLibrary: coreLibFile,
+    patch,
+    commits: {
+      count: coreLibCommits.length,
+      details: coreLibCommits.map((commit) => ({
+        sha: commit.sha,
+        by: commit.author.url,
+        on: commit.commit.author.date,
+        url: commit.html_url,
+        message: commit.commit.message,
+      }))
+    }
+  };
 };
 
 

@@ -13,88 +13,167 @@
       "Tagger"
     ]
   },
-  "firstCommit": {
-    "sha": "157df56d2e1af3abacbfd570a89ddf7c4f940881",
-    "node_id": "C_kwDOL8BfVdoAKDE1N2RmNTZkMmUxYWYzYWJhY2JmZDU3MGE4OWRkZjdjNGY5NDA4ODE",
-    "commit": {
-      "author": {
-        "name": "Amol Anand",
-        "email": "amol-anand@users.noreply.github.com",
-        "date": "2022-11-18T20:43:27Z"
-      },
-      "committer": {
-        "name": "GitHub",
-        "email": "noreply@github.com",
-        "date": "2022-11-18T20:43:27Z"
-      },
-      "message": "Initial commit",
-      "tree": {
-        "sha": "29a286a96632e3c73945b4bbbffcef4b74154448",
-        "url": "https://api.github.com/repos/kunwarsaluja/hackathon-runbook-stream/git/trees/29a286a96632e3c73945b4bbbffcef4b74154448"
-      },
-      "url": "https://api.github.com/repos/kunwarsaluja/hackathon-runbook-stream/git/commits/157df56d2e1af3abacbfd570a89ddf7c4f940881",
-      "comment_count": 0,
-      "verification": {
-        "verified": true,
-        "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJjd+5vCRBK7hj4Ov3rIwAAfDoIACsU5QrYCG7aYNy+LGEa3Kt5\nSI9JQCu5bJITUBdVXUQbYZoEIjPyAMr4jrB41EmocaljLz76iwOVs+kJDuCQMZ+D\nmg8cjhm5gJf9lm8xgSJfKWkoloAh7ZuF9xp6/TcdExrGZRaU0fx8VL8aiERPAHF3\ntimV48GXKUEcbS8I3TydwG9Htal/MJNELFSCQD07TZdRTpkig4wBGLLJ9Z0PKyTH\nGJ8l6YdHhPvHt9Md5LQ9er9jsXoySnaj0n9DlAv1HglAxIcqMudvTYnnZrjVvlcP\n43igB71Y1oBLgbVeFUcU/V7VrTDYY00lbrnZ+6pC0fueeayS7Vl14vAPSa1WpkE=\n=u1P7\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 29a286a96632e3c73945b4bbbffcef4b74154448\nauthor Amol Anand <amol-anand@users.noreply.github.com> 1668804207 -0500\ncommitter GitHub <noreply@github.com> 1668804207 -0500\n\nInitial commit"
-      }
-    },
-    "url": "https://api.github.com/repos/kunwarsaluja/hackathon-runbook-stream/commits/157df56d2e1af3abacbfd570a89ddf7c4f940881",
-    "html_url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/157df56d2e1af3abacbfd570a89ddf7c4f940881",
-    "comments_url": "https://api.github.com/repos/kunwarsaluja/hackathon-runbook-stream/commits/157df56d2e1af3abacbfd570a89ddf7c4f940881/comments",
-    "author": {
-      "login": "amol-anand",
-      "id": 7074782,
-      "node_id": "MDQ6VXNlcjcwNzQ3ODI=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/7074782?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/amol-anand",
-      "html_url": "https://github.com/amol-anand",
-      "followers_url": "https://api.github.com/users/amol-anand/followers",
-      "following_url": "https://api.github.com/users/amol-anand/following{/other_user}",
-      "gists_url": "https://api.github.com/users/amol-anand/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/amol-anand/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/amol-anand/subscriptions",
-      "organizations_url": "https://api.github.com/users/amol-anand/orgs",
-      "repos_url": "https://api.github.com/users/amol-anand/repos",
-      "events_url": "https://api.github.com/users/amol-anand/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/amol-anand/received_events",
-      "type": "User",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "site_admin": false
-    },
-    "parents": []
-
-  },
-  "customIndexDefinitions": {
-    "customIndexDefinitions": true,
-    "URL": "https://raw.githubusercontent.com/kunwarsaluja/hackathon-runbook-stream/main/helix-query.yaml"
-  },
-  "cdn": [
-    "cdn.adobeaemcloud.com"
-  ]
-
+  "boilerplateCustomizations": {
+    "coreLibrary": "scripts/lib-franklin.js",
+    "patch": "===================================================================\n--- initialCommit\n+++ current\n@@ -123,8 +123,25 @@\n   return toClassName(name).replace(/-([a-z])/g, (g) => g[1].toUpperCase());\n }\n \n /**\n+ * Convert text to sentence case.\n+ * @param {string} text property\n+ * @returns {string} The sentence case value(s)\n+ */\n+export function toSentenceCase(text) {\n+  // Split the text by hyphens or other non-word characters\n+  const words = text.split(/[-\\s]+/);\n+\n+  // Capitalize the first letter of each word and convert the rest to lowercase\n+  // eslint-disable-next-line max-len\n+  const sentenceCaseWords = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());\n+\n+  // Join the words back together with spaces\n+  return sentenceCaseWords.join(' ');\n+}\n+\n+/**\n  * Replace icons with inline SVG and prefix with codeBasePath.\n  * @param {Element} element\n  */\n export function decorateIcons(element = document) {\n@@ -240,9 +257,9 @@\n }\n \n /**\n  * Decorates all sections in a container element.\n- * @param {Element} $main The container element\n+ * @param {Element} main The container element\n  */\n export function decorateSections(main) {\n   main.querySelectorAll(':scope > div').forEach((section) => {\n     const wrappers = [];\n@@ -263,16 +280,32 @@\n     /* process section metadata */\n     const sectionMeta = section.querySelector('div.section-metadata');\n     if (sectionMeta) {\n       const meta = readBlockConfig(sectionMeta);\n+      let styles;\n+\n       Object.keys(meta).forEach((key) => {\n-        if (key === 'style') {\n-          const styles = meta.style.split(',').map((style) => toClassName(style.trim()));\n-          styles.forEach((style) => section.classList.add(style));\n-        } else {\n-          section.dataset[toCamelCase(key)] = meta[key];\n+        switch (key) {\n+          case 'style':\n+            styles = meta.style.split(',').map((style) => toClassName(style.trim()));\n+            styles.forEach((style) => section.classList.add(style));\n+            break;\n+          case 'theme':\n+            section.setAttribute('data-theme', meta.theme);\n+            break;\n+          case 'id':\n+            section.setAttribute('id', toClassName(meta.id));\n+            if (key === 'title') {\n+              section.setAttribute('data-title', meta.title);\n+            } else {\n+              section.setAttribute('data-title', toSentenceCase(meta.id));\n+            }\n+            break;\n+          default:\n+            section.dataset[toCamelCase(key)] = meta[key];\n         }\n       });\n+\n       sectionMeta.parentNode.remove();\n     }\n   });\n }\n@@ -388,48 +421,10 @@\n     updateSectionsStatus(main);\n   }\n }\n \n-/**\n- * Returns a picture element with webp and fallbacks\n- * @param {string} src The image URL\n- * @param {boolean} eager load image eager\n- * @param {Array} breakpoints breakpoints and corresponding params (eg. width)\n- */\n-export function createOptimizedPicture(src, alt = '', eager = false, breakpoints = [{ media: '(min-width: 400px)', width: '2000' }, { width: '750' }]) {\n-  const url = new URL(src, window.location.href);\n-  const picture = document.createElement('picture');\n-  const { pathname } = url;\n-  const ext = pathname.substring(pathname.lastIndexOf('.') + 1);\n+// createOptimizedPicture moved to scripts.js\n \n-  // webp\n-  breakpoints.forEach((br) => {\n-    const source = document.createElement('source');\n-    if (br.media) source.setAttribute('media', br.media);\n-    source.setAttribute('type', 'image/webp');\n-    source.setAttribute('srcset', `${pathname}?width=${br.width}&format=webply&optimize=medium`);\n-    picture.appendChild(source);\n-  });\n-\n-  // fallback\n-  breakpoints.forEach((br, i) => {\n-    if (i < breakpoints.length - 1) {\n-      const source = document.createElement('source');\n-      if (br.media) source.setAttribute('media', br.media);\n-      source.setAttribute('srcset', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);\n-      picture.appendChild(source);\n-    } else {\n-      const img = document.createElement('img');\n-      img.setAttribute('loading', eager ? 'eager' : 'lazy');\n-      img.setAttribute('alt', alt);\n-      picture.appendChild(img);\n-      img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);\n-    }\n-  });\n-\n-  return picture;\n-}\n-\n /**\n  * Normalizes all headings within a container element.\n  * @param {Element} el The container element\n  * @param {[string]} allowedHeadings The list of allowed headings (h1 ... h6)\n@@ -471,36 +466,316 @@\n   const theme = getMetadata('theme');\n   if (theme) addClasses(document.body, theme);\n }\n \n+const iconMap = Object.freeze({\n+  video: { expression: [/^.*(youtube|vimeo|youtu.be).*$/i, /^.*\\.(mp4)$/i], className: 'icon-play-button' },\n+  download: { expression: [/^.*\\.(pdf)$/i], className: 'icon-download' },\n+  bookmark: { expression: [/^#.+$/i], className: 'icon-arrow' },\n+  internal: { expression: [/^\\/.+$/i, /^(.*?(\\bibm.com\\b)[^$]*)$/i], className: 'icon-arrow' },\n+  external: { expression: [/^((?!merative.com|ibm.com).)*$/i, /^mailto.*$/i], className: 'icon-arrow' },\n+});\n+\n+function getButtonIcon(button) {\n+  if (button.querySelector('span.icon') || !button.href) {\n+    return undefined;\n+  }\n+  // automatically apply icon\n+  const iconEntry = Object.entries(iconMap).find(\n+    ([, item]) => item.expression.some((exp) => exp.test(button.getAttribute('href'))),\n+  );\n+  if (iconEntry) {\n+    const [iconVariant, iconItem] = iconEntry;\n+    return [iconItem.className, iconVariant];\n+  }\n+  return undefined;\n+}\n+\n+function getButtonLabel(button) {\n+  // try sibling text\n+  const sibling = button.parentElement?.previousElementSibling;\n+  if (sibling && sibling.textContent) {\n+    return sibling.textContent;\n+  }\n+  // try href\n+  if (button.href) {\n+    return button.href.replace(/[^\\w]/gi, '-');\n+  }\n+  return undefined;\n+}\n+\n+const videoTypeMap = Object.freeze({\n+  youtube: [/youtube\\.com/, /youtu\\.be/],\n+  mp4: [/\\.mp4/],\n+  external: [/vimeo\\.com/],\n+});\n+\n /**\n+ * Determine the type of video from its href.\n+ * @param href\n+ * @return {undefined|youtube|mp4|external}\n+ */\n+export const getVideoType = (href) => {\n+  const videoEntry = Object.entries(videoTypeMap).find(\n+    ([, allowedUrls]) => allowedUrls.some((urlToCompare) => urlToCompare.test(href)),\n+  );\n+  if (videoEntry) {\n+    return videoEntry[0];\n+  }\n+  return undefined;\n+};\n+\n+/**\n+ * Extract YouTube video id from its URL.\n+ * @param href A valid YouTube URL\n+ * @return {string|null}\n+ */\n+const getYouTubeId = (href) => {\n+  const ytExp = /(?:[?&]v=|\\/embed\\/|\\/1\\/|\\/v\\/|https:\\/\\/(?:www\\.)?youtu\\.be\\/)([^&\\n?#]+)/;\n+  const match = href.match(ytExp);\n+  if (match && match.length > 1) {\n+    return match[1];\n+  }\n+  return null;\n+};\n+\n+/**\n+ * Helper function to create DOM elements\n+ * @param {string} tag DOM element to be created\n+ * @param {object} attributes attributes to be added\n+ * @param html {HTMLElement | SVGAElement | string} Additional html to be appended to tag\n+ */\n+\n+export function createTag(tag, attributes = {}, html = undefined) {\n+  const el = document.createElement(tag);\n+  if (html) {\n+    if (html instanceof HTMLElement || html instanceof SVGElement) {\n+      el.append(html);\n+    } else {\n+      el.insertAdjacentHTML('beforeend', html);\n+    }\n+  }\n+  if (attributes) {\n+    Object.entries(attributes).forEach(([key, val]) => {\n+      el.setAttribute(key, val);\n+    });\n+  }\n+  return el;\n+}\n+\n+/**\n+ * Display video within a modal overlay. Video can be served directly or via YouTube.\n+ * @param href\n+ * @return {HTMLElement}\n+ */\n+export const buildVideoModal = (href, videoType) => {\n+  const videoModal = createTag('div', { class: 'video-modal', 'aria-modal': 'true', role: 'dialog' });\n+  videoModal.style.display = 'none';\n+  const videoOverlay = createTag('div', { class: 'video-modal-overlay' });\n+  const videoContainer = createTag('div', { class: 'video-modal-container' });\n+\n+  const videoHeader = createTag('div', { class: 'video-modal-header' });\n+  const videoClose = createTag('button', { class: 'video-modal-close', 'aria-label': 'close' });\n+  videoHeader.appendChild(videoClose);\n+  videoContainer.appendChild(videoHeader);\n+\n+  const videoContent = createTag('div', { class: 'video-modal-content' });\n+  if (videoType === 'youtube') {\n+    const videoId = getYouTubeId(href);\n+    videoContent.dataset.ytid = videoId;\n+    videoContent.setAttribute('data-videoType', 'youtube');\n+    videoContent.setAttribute('data-videoId', videoId);\n+  } else {\n+    videoContent.innerHTML = `<video controls playsinline loop preload=\"auto\">\n+        <source src=\"${href}\" type=\"video/mp4\" />\n+        \"Your browser does not support videos\"\n+        </video>`;\n+  }\n+  videoContainer.appendChild(videoContent);\n+\n+  videoModal.appendChild(videoOverlay);\n+  videoModal.appendChild(videoContainer);\n+  return videoModal;\n+};\n+\n+let player;\n+\n+/**\n+ * Create a new YT Player and store the result of its player ready event.\n+ * @param element iFrame element YouTube player will be attached to.\n+ * @param videoId The YouTube video id\n+ */\n+const loadYouTubePlayer = (element, videoId) => {\n+  // The API will call this function when the video player is ready.\n+  const onPlayerReady = (event) => {\n+    event.target.playVideo();\n+  };\n+\n+  // eslint-disable-next-line no-new\n+  player = new window.YT.Player(element, {\n+    videoId,\n+    playerVars: {\n+      start: 0, // Always start from the beginning\n+    },\n+    events: {\n+      onReady: onPlayerReady,\n+    },\n+  });\n+};\n+\n+/**\n+ * Toggle video overlay modal between open and closed.\n+ * When the overlay is opened the video will start playing.\n+ * When the overlay is closed the video will be paused.\n+ * @param block Block containing a video modal\n+ */\n+export const toggleVideoOverlay = (modal) => {\n+  const videoContent = modal.querySelector('.video-modal-content');\n+  const videoType = videoContent.getAttribute('data-videoType');\n+  const videoId = videoContent.getAttribute('data-videoId');\n+\n+  if (modal?.classList?.contains('open')) {\n+    modal.style.display = 'none';\n+    modal.classList.remove('open');\n+    if (videoType === 'youtube') {\n+      player?.stopVideo();\n+      // Destroy the iframe when the video is closed.\n+      const iFrame = document.getElementById(`ytFrame-${videoId}`);\n+      if (iFrame) {\n+        const container = iFrame.parentElement;\n+        container.removeChild(iFrame);\n+      }\n+    } else {\n+      modal.querySelector('video')?.pause();\n+      modal.querySelector('video').currentTime = 0;\n+    }\n+  } else {\n+    modal.style.display = 'block';\n+    modal.classList.add('open');\n+    if (videoType === 'youtube') {\n+      // Create a YouTube compatible iFrame\n+      videoContent.innerHTML = `<div id=\"ytFrame-${videoId}\" data-hj-allow-iframe=\"true\"></div>`;\n+      if (window.YT) {\n+        loadYouTubePlayer(`ytFrame-${videoId}`, videoId);\n+      } else {\n+        const tag = document.createElement('script');\n+        tag.src = 'https://www.youtube.com/iframe_api';\n+        const firstScriptTag = document.getElementsByTagName('script')[0];\n+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+        // eslint-disable-next-line func-names\n+        window.onYouTubePlayerAPIReady = function () {\n+          loadYouTubePlayer(`ytFrame-${videoId}`, videoId);\n+        };\n+      }\n+    } else {\n+      modal.querySelector('video')?.play();\n+    }\n+  }\n+};\n+\n+/**\n+ * Determine the icon class based on the URL path\n+ */\n+\n+export function getIconTypebyPath(url) {\n+  const iconEntry = Object.entries(iconMap).find(\n+    ([, item]) => item.expression.some((exp) => exp.test(url)),\n+  );\n+  if (iconEntry) {\n+    const [iconVariant, iconItem] = iconEntry;\n+    return [iconItem.className, iconVariant];\n+  }\n+  return undefined;\n+}\n+\n+/**\n  * decorates paragraphs containing a single link as buttons.\n  * @param {Element} element container element\n+ * @param {Object} options options object to control how decoration is performed\n  */\n+export function decorateButtons(element, options = {}) {\n+  const mergedOptions = { ...{ decorateClasses: true, excludeIcons: ['internal'] }, ...options };\n+  element.querySelectorAll('a').forEach((a) => {\n+    // Determine the type of video based on the href attribute\n+    const videoType = getVideoType(a.href);\n \n-export function decorateButtons(element) {\n-  element.querySelectorAll('a').forEach((a) => {\n-    a.title = a.title || a.textContent;\n+    // Check if the video type is 'youtube' or 'mp4'\n+    if (['youtube', 'mp4'].includes(videoType)) {\n+      // Build a modal for the video\n+      const videoModal = buildVideoModal(a.href, videoType);\n+\n+      const videoClose = videoModal.querySelector('button.video-modal-close');\n+\n+      // Add a click event listener to close the video modal when the close button is clicked\n+      videoClose.addEventListener('click', () => toggleVideoOverlay(videoModal));\n+\n+      a.addEventListener('click', (e) => {\n+        e.preventDefault();\n+\n+        // Toggle the video overlay when the anchor element is clicked\n+        toggleVideoOverlay(videoModal);\n+      });\n+\n+      // Append the video modal to the 'block' container\n+      if (element.tagName === 'MAIN') {\n+        document.body.appendChild(videoModal);\n+      } else {\n+        element.appendChild(videoModal);\n+      }\n+    }\n+\n     if (a.href !== a.textContent) {\n       const up = a.parentElement;\n       const twoup = a.parentElement.parentElement;\n+      const down = a.firstElementChild;\n       if (!a.querySelector('img')) {\n-        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {\n-          a.className = 'button primary'; // default\n-          up.classList.add('button-container');\n+        if (mergedOptions.decorateClasses) {\n+          if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {\n+            up.classList.add('button-container');\n+            if (!down || down.tagName === 'SPAN') {\n+              a.classList.add('button', 'tertiary');\n+            } else if (down && down.tagName === 'EM') {\n+              a.classList.add('button', 'secondary');\n+            } else {\n+              a.classList.add('button', 'primary');\n+            }\n+          }\n+          if (up.childNodes.length === 1 && up.tagName === 'STRONG'\n+            && twoup.childNodes.length === 1 && twoup.tagName === 'P') {\n+            a.classList.add('button', 'primary');\n+            twoup.classList.add('button-container');\n+          }\n+          if (up.childNodes.length === 1 && up.tagName === 'EM'\n+            && twoup.childNodes.length === 1 && twoup.tagName === 'P') {\n+            a.classList.add('button', 'secondary');\n+            twoup.classList.add('button-container');\n+          }\n         }\n-        if (up.childNodes.length === 1 && up.tagName === 'STRONG'\n-          && twoup.childNodes.length === 1 && twoup.tagName === 'P') {\n-          a.className = 'button primary';\n-          twoup.classList.add('button-container');\n+        if (a.classList.contains('button')) {\n+          // add icon\n+          const iconClass = getButtonIcon(a);\n+          if (iconClass && iconClass.every((cls) => !mergedOptions.excludeIcons.includes(cls))) {\n+            // add span\n+            const span = document.createElement('span');\n+            span.classList.add('icon', ...iconClass);\n+            a.appendChild(span);\n+          }\n+          if (a.querySelector('span.icon')) {\n+            a.classList.add('has-icon');\n+          }\n         }\n-        if (up.childNodes.length === 1 && up.tagName === 'EM'\n-          && twoup.childNodes.length === 1 && twoup.tagName === 'P') {\n-          a.className = 'button secondary';\n-          twoup.classList.add('button-container');\n-        }\n       }\n     }\n+    // add aria-label when included in options or when no text content\n+    const hasAriaLabel = !!a.getAttribute('aria-label');\n+    if (!hasAriaLabel && (mergedOptions.ariaLabel || !a.textContent)) {\n+      const label = mergedOptions.ariaLabel || getButtonLabel(a);\n+      if (label) {\n+        a.setAttribute('aria-label', label);\n+      } else {\n+        a.setAttribute('aria-hidden', 'true');\n+      }\n+    }\n   });\n }\n \n /**\n@@ -531,12 +806,34 @@\n export function loadHeader(header) {\n   const headerBlock = buildBlock('header', '');\n   header.append(headerBlock);\n   decorateBlock(headerBlock);\n+  document.querySelector('body').classList.add('header-visible');\n+\n   return loadBlock(headerBlock);\n }\n \n /**\n+ * loads a block named 'solution-header' into header\n+ */\n+\n+export function loadSolutionHeader(header) {\n+  const solutionHeaderBlock = document.querySelector('.solution-header-wrapper');\n+\n+  if (solutionHeaderBlock) {\n+    header.append(solutionHeaderBlock);\n+\n+    // Create a promise that resolves when the next animation frame is available\n+    const waitForAnimationFrame = () => new Promise(requestAnimationFrame);\n+\n+    // Wait for the next animation frame before adding the class\n+    waitForAnimationFrame().then(() => {\n+      document.querySelector('body').classList.add('header-visible');\n+    });\n+  }\n+}\n+\n+/**\n  * loads a block named 'footer' into footer\n  */\n \n export function loadFooter(footer) {\n",
+    "commits": {
+      "count": 22,
+      "details": [
+        {
+          "sha": "27e70bcf91be6d8e776be3869aab8ac5d2ed6a37",
+          "by": "https://api.github.com/users/helms-charity",
+          "on": "2023-12-04T17:05:10Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/27e70bcf91be6d8e776be3869aab8ac5d2ed6a37",
+          "message": "feat(sidekick): upgrade block library to use new plugin (#296)\n\n* feat: add new sidekick library plugin version\r\n\r\n* feat: add json location for block-library\r\n\r\n* feat: add plugin names\r\n\r\n* feat: add icon path\r\n\r\n* feat: move plugin js to new dir\r\n\r\n* fix: spelling\r\n\r\n* feat: move library utils file\r\n\r\n* feat: create plugin dirs\r\n\r\n* fix: typo in path\r\n\r\n* fix: updated paths to scripts/\r\n\r\n* feat: add the css files\r\n\r\n* feat: add blocks js\r\n\r\n* fix: testing the removal of individual js\r\n\r\n* feature: remove rectangle size constraint\r\n\r\n* feature: add dark purple as bg option\r\n\r\n* feature: create Stat block library item\r\n\r\n* fix: stat font color\r\n\r\n* feature: remove old block lobrary lists\r\n\r\n* feature: add sections\r\n\r\n* feature: change to JS instead of json for section\r\n\r\n* feature: removing plugin config since it is not a plugin\r\n\r\n* feature: trying another way\r\n\r\n* feature: adding full plugins now\r\n\r\n* feature: remove old sidekick files\r\n\r\n* add hlx.page to CSP\r\n\r\n* feature: change icon fetch URL for testing\r\n\r\n* feature: adding style for library plugin to csp\r\n\r\n* feature: commenting out the css\r\n\r\n* feature: add height\r\n\r\n* feature: new sidekick version\r\n\r\n* fix: moved createOptimizedPicture\r\n\r\n* fix: block library icons host URL updated for merging\r\n\r\n* update test\r\n\r\n* fix: test\r\n\r\n* fix: linting\r\n\r\n* resolve conflicts\r\n\r\n* fix more conflicts\r\n\r\n* plugin sections\r\n\r\n* linting of js\r\n\r\n* fix: library location and compound sections will copy\r\n\r\n* fix: prevent template and block library pages from being published\r\n\r\n* fix: remove comment\r\n\r\n* small update to image path\r\n\r\n* removed comment\r\n\r\n* removing unnecessary section code\r\n\r\n* remove block-utils.test.js\r\n\r\n---------\r\n\r\nCo-authored-by: Putra Bonaccorsi <putra.roeung@gmail.com>"
+        },
+        {
+          "sha": "c1c2871c38255046d773bc0ba1cbd8552f803d47",
+          "by": "https://api.github.com/users/proeung",
+          "on": "2023-10-05T16:48:44Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/c1c2871c38255046d773bc0ba1cbd8552f803d47",
+          "message": "feat(microsite): Add Solution Header and Solution Footer blocks used within custom campaign/microsites  (#344)\n\n* feat(solution-header): add block and scroll to behavior\r\n\r\n* feat(solution-header): adjust scroll to behavior\r\n\r\n* feat(solution-header): add nav list\r\n\r\n* feat(solution-header): add cleanup\r\n\r\n* feat(solution-header): add solution footer block\r\n\r\n* feat(solution-footer): add responsive styling\r\n\r\n* feat(solution-footer): add more styles and fixes\r\n\r\n* feat(solution-header): check for when the append is fired\r\n\r\n* feat(solution-header): add spacing fixes based on feedback\r\n\r\n* feat(solution-header): fix lint issue"
+        },
+        {
+          "sha": "1296993e0d602b2be1bee496b4f002091d65fa0c",
+          "by": "https://api.github.com/users/nimithshetty17",
+          "on": "2023-09-20T16:10:59Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/1296993e0d602b2be1bee496b4f002091d65fa0c",
+          "message": "feat(cta): Implement Global CTA Video Modal to link with YT or .mp4 (#339)\n\n* feature(global-cta-modal-implementation): Global CTA Video Modal.\r\n\r\n* feature(global-cta-modal-implementation): adding linkable card changes.\r\n\r\n* feature(global-cta-modal-implementation): adding comments in the files.\r\n\r\n* feature(global-cta-modal-implementation): Global CTA Video Modal overlay issue.\r\n\r\n---------\r\n\r\nCo-authored-by: Putra Bonaccorsi <putra.roeung@gmail.com>"
+        },
+        {
+          "sha": "1dcd758b736759f4be63b3d1d3107571725482f3",
+          "by": "https://api.github.com/users/proeung",
+          "on": "2023-09-15T17:04:19Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/1dcd758b736759f4be63b3d1d3107571725482f3",
+          "message": "Revert \"feature(global-cta-modal-implementation): Global CTA Video Modal. (#335)\"\n\nThis reverts commit 0d0ccc66c2ce9af8b2a74fb8ad9af9563a544d58."
+        },
+        {
+          "sha": "0d0ccc66c2ce9af8b2a74fb8ad9af9563a544d58",
+          "by": "https://api.github.com/users/nimithshetty17",
+          "on": "2023-09-15T13:49:21Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/0d0ccc66c2ce9af8b2a74fb8ad9af9563a544d58",
+          "message": "feature(global-cta-modal-implementation): Global CTA Video Modal. (#335)\n\n* feature(global-cta-modal-implementation): Global CTA Video Modal.\r\n\r\n* feature(global-cta-modal-implementation): adding linkable card changes.\r\n\r\n* feature(global-cta-modal-implementation): adding comments in the files.\r\n\r\n---------\r\n\r\nCo-authored-by: Putra Bonaccorsi <putra.roeung@gmail.com>"
+        },
+        {
+          "sha": "7ecc266f1298cd491e7052d9658a1c52a3d800b9",
+          "by": "https://api.github.com/users/proeung",
+          "on": "2023-09-07T19:58:16Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/7ecc266f1298cd491e7052d9658a1c52a3d800b9",
+          "message": "fix(product-landing): Fix various blocks and section used within MDX landing page (#326)\n\n* fix(product-landing): clean up code & adjust accordion\r\n\r\n* fix(product-landing): add more changes to accordion\r\n\r\n* feat(product-event-template): add stats with illustration style and linkable block\r\n\r\n* fix(product-landing): clean up linkable card block script and styles\r\n\r\n* fix(product-landing): linkable cards fix paragraph size\r\n\r\n* fix(product-landing): remove un-useful code made in the content band checklist\r\n\r\n* fix(product-landing): remove content band checkmark and reuse content intro block instead\r\n\r\n* fix(product-landing): adjust content intro block\r\n\r\n* fix(product-landing): add checkmark style to Content Intro block\r\n\r\n* fix(product-landing): fix linkable block card styling\r\n\r\n* fix(product-landing): fix lint issues\r\n\r\n* fix(product-landing): add theme to Accordion block\r\n\r\n* fix(product-landing): fix svg icons\r\n\r\n* fix(product-landing): address design QA feedback\r\n\r\n* fix(product-landing): reorder font size vars\r\n\r\n* fix(product-landing): fix secondary button play icon color"
+        },
+        {
+          "sha": "5c29399836336a9d0909505b1ddcac0950a5d221",
+          "by": "https://api.github.com/users/proeung",
+          "on": "2023-08-30T15:10:51Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/5c29399836336a9d0909505b1ddcac0950a5d221",
+          "message": "feat(quick-links): Add POC LinkTree/Bitly template for showing quick links (#318)\n\n* feat(quick-links): add quick links buttons block\r\n\r\n* feat(quick-links): add blocks and styles\r\n\r\n* feat(quick-links): add more style fixes and cleanup\r\n\r\n* feat(quick-links): clean up js block exports\r\n\r\n* feat(quick-links): add changes based on design review\r\n\r\n* feat(quick-links): adjust header logo mobile height\r\n\r\n* feat(quick-links): clean up code"
+        },
+        {
+          "sha": "f929e6fd266a22854669ea27a09eedb30386cb71",
+          "by": "https://api.github.com/users/amol-anand",
+          "on": "2023-05-16T21:04:01Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/f929e6fd266a22854669ea27a09eedb30386cb71",
+          "message": "updating min width for createOptimizedPicture (#142)"
+        },
+        {
+          "sha": "c3172d95d2c403d48d910095ef68f5adda31e63b",
+          "by": "https://api.github.com/users/amol-anand",
+          "on": "2023-05-11T19:50:55Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/c3172d95d2c403d48d910095ef68f5adda31e63b",
+          "message": "Lighthouse scores part 2 #247 (#133)\n\n- updating links for icons and hamburger\r\n- catch all add aria-label to all links\r\n- integrate `aria-label` logic into `decorateButtons`\r\n- use row title for document card links\r\n\r\n---------\r\n\r\nCo-authored-by: Anthony Rumsey <arumsey@adobe.com>"
+        },
+        {
+          "sha": "52c0a6002867148aac9d8d1fe610793a9cba39bf",
+          "by": "https://api.github.com/users/VladimirZaets",
+          "on": "2023-05-11T15:07:56Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/52c0a6002867148aac9d8d1fe610793a9cba39bf",
+          "message": "Lighthouse scores part 2 #247 (#134)"
+        },
+        {
+          "sha": "8270cbd2ca8ced696f975c41811739931c97d540",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-04-24T14:16:01Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/8270cbd2ca8ced696f975c41811739931c97d540",
+          "message": "Revert temporary header nav path (#114)\n\n- temporary nav path was used for mega menu development"
+        },
+        {
+          "sha": "850c545f6e36267c171fe58c9e4cb12ffe046d7e",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-04-21T16:20:07Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/850c545f6e36267c171fe58c9e4cb12ffe046d7e",
+          "message": "Mega Menu Header #144 (#110)\n\n* Mobile nav working\r\n\r\n* additional decorating\r\n\r\n* new menu l2 l3 with links and hovers\r\n\r\n* adding bg color to l2 when expanded\r\n\r\n* added support for autoblocking fragments in header\r\n\r\n* Mega Menu Header #144\r\n\r\n- use primary butto\r\n\r\n* Mega Menu Header #144\r\n\r\n- use primary button\r\n- add close icon\r\n- add level 2 title\r\n\r\n* Mega Menu Header #144\r\n\r\n- mega menu layout fixes (desktop/mobile)\r\n\r\n* Mega Menu Header #144\r\n\r\n- move button in mobile view\r\n- fix cursor pointer\r\n- fix display logic for list items\r\n\r\n* Mega Menu Header #144\r\n\r\n- fix css linting\r\n\r\n* Mega Menu Header #144\r\n\r\n- add featured list item\r\n\r\n* Mega Menu Header #144\r\n\r\n- fix tests\r\n\r\n---------\r\n\r\nCo-authored-by: Amol Anand <amol.anand@gmail.com>\r\nCo-authored-by: Charity Helms <3883795+venturewise@users.noreply.github.com>"
+        },
+        {
+          "sha": "826dda719ad4403bcf85672d3977e4787e4274cd",
+          "by": "https://api.github.com/users/VladimirZaets",
+          "on": "2023-04-19T15:25:06Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/826dda719ad4403bcf85672d3977e4787e4274cd",
+          "message": "Related resources fixes (#101)\n\n* related-resources-fixes"
+        },
+        {
+          "sha": "6c46c84a43e0ee31b45204569622b48ef292dab5",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-04-12T18:48:02Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/6c46c84a43e0ee31b45204569622b48ef292dab5",
+          "message": "#173 QA fixes for company page (#83)\n\n- add promo section styles\r\n- remove hero auto blocking\r\n- fix `teaser-list` spacing\r\n- fix `columns` spacing"
+        },
+        {
+          "sha": "070c6fe2505fb4e9f2d3b999633bb81f4a1c58ac",
+          "by": "https://api.github.com/users/VladimirZaets",
+          "on": "2023-04-12T17:17:00Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/070c6fe2505fb4e9f2d3b999633bb81f4a1c58ac",
+          "message": "Add parsing for url extensions (#82)\n\n* Add parsing url extension\r\n- refactor `related-resources` buttons to leverage common button decoration functions"
+        },
+        {
+          "sha": "064ace0139b9f075d8474f881d0f4f17fc08d8cd",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-04-06T13:04:55Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/064ace0139b9f075d8474f881d0f4f17fc08d8cd",
+          "message": "Icon disappears on link button with icon #164 (#71)\n\n- remove gradient from SVGs"
+        },
+        {
+          "sha": "0e4ad84526e527dc88b8b1f1cf2884b27ccecc57",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-04-04T14:53:34Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/0e4ad84526e527dc88b8b1f1cf2884b27ccecc57",
+          "message": "Events #123 (#62)\n\n- fix button processing"
+        },
+        {
+          "sha": "56f79e7ff0a251da584425fae4c90f67e8c9aa2c",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-03-31T17:51:37Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/56f79e7ff0a251da584425fae4c90f67e8c9aa2c",
+          "message": "Zelta User Conference Event Page (#54)\n\n- allow `mailto` in links\r\n- add `headshots` block\r\n- remove `no-link-icon` support"
+        },
+        {
+          "sha": "447e01608a2317233b03c1ac35325d98bce82938",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-03-30T16:48:22Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/447e01608a2317233b03c1ac35325d98bce82938",
+          "message": "Events #123\n\n- introduce global button icon handling"
+        },
+        {
+          "sha": "7723c291a73c86a1963afee6433772d04d034566",
+          "by": "https://api.github.com/users/arumsey",
+          "on": "2023-03-30T16:30:19Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/7723c291a73c86a1963afee6433772d04d034566",
+          "message": "Events #123\n\n- introduce global button icon handling"
+        },
+        {
+          "sha": "5463097a61fb4564ead01481701d8d8e212631f3",
+          "by": "https://api.github.com/users/amol-anand",
+          "on": "2023-01-24T00:03:25Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/5463097a61fb4564ead01481701d8d8e212631f3",
+          "message": "Moving code back to root, updating deps"
+        },
+        {
+          "sha": "56d74b149168f742612313841224d2451f5a94b8",
+          "by": "https://api.github.com/users/amol-anand",
+          "on": "2022-12-19T22:46:10Z",
+          "url": "https://github.com/kunwarsaluja/hackathon-runbook-stream/commit/56d74b149168f742612313841224d2451f5a94b8",
+          "message": "Moving whole app to /blog for CDN redirect"
+        }
+      ]
+    }
   }
-
 }
