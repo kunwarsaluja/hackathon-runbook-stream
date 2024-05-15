@@ -6,6 +6,13 @@
     "liveUrl": "https://main--hackathon-runbook-stream--kunwarsaluja.hlx.live/",
     "prodUrl": "www.merative.com"
   },
+  "pluginInfo": {
+    "pluginTitles": [
+      "Library",
+      "AEM Assets Library",
+      "Tagger"
+    ]
+  },
   "firstCommit": {
     "sha": "157df56d2e1af3abacbfd570a89ddf7c4f940881",
     "node_id": "C_kwDOL8BfVdoAKDE1N2RmNTZkMmUxYWYzYWJhY2JmZDU3MGE4OWRkZjdjNGY5NDA4ODE",
