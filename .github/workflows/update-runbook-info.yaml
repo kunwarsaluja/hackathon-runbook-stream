@@ -10,9 +10,9 @@ jobs:
       - name: Check out repo content
         uses: actions/checkout@v4
       - name: Configure git
-      run: |
-        git config user.name "GitHubActions"
-        git config user.email "<>"
+        run: |
+          git config user.name "GitHubActions"
+          git config user.email "<>"
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
