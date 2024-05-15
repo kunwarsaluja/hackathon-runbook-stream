@@ -1,6 +1,8 @@
 
 import { Octokit } from "octokit";
-import fs from 'fs';
+import { promises as fs } from 'fs';
+import YAML from 'yaml'
+import fetch from 'node-fetch';
 
 const OCTOKIT_BASE_PARAMS = {
   owner: "kunwarsaluja",
@@ -8,6 +10,21 @@ const OCTOKIT_BASE_PARAMS = {
   headers: {
     'X-GitHub-Api-Version': '2022-11-28'
   }
+};
+
+const getEnvironmentInfo = async () => {
+  const fsTab = await fs.readFile('../../fstab.yaml', { encoding: 'utf8' });
+  const data = YAML.parse(fsTab);
+
+  const resp = await fetch(`https://admin.hlx.page/status/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}/main`);
+  const json = await resp.json();
+
+  return {
+    previewUrl: json.preview.url,
+    liveUrl: json.live.url,
+    githubUrl: `https://github.com/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}`,
+    sharepointUrl: data.mountpoints['/'],
+  };
 };
 
 const getFirstCommit = async (octokit) => {
@@ -24,12 +41,15 @@ const main = async (token, targetDirectory) => {
   });
 
   const data = {};
+  data.environmentInfo = await getEnvironmentInfo();
   data.firstCommit = await getFirstCommit(octokit);
 
-  if (!fs.existsSync(targetDirectory)) {
-    fs.mkdirSync(targetDirectory);
+  try {
+    fs.access(targetDirectory, fs.constants.W_OK);
+  } catch {
+    await fs.mkdir(targetDirectory);
   }
-  fs.writeFileSync(`${targetDirectory}/runbook-info.json`, JSON.stringify(data, undefined, 2));
+  await fs.writeFile(`${targetDirectory}/runbook-info.json`, JSON.stringify(data, undefined, 2));
 };
 
 const token = process.argv[2];
