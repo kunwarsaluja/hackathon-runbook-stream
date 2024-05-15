@@ -14,7 +14,7 @@ const main = async (token, targetDirectory) => {
   const blocks = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
     owner: "kunwarsaluja",
     repo: "hackathon-runbook-stream",
-    path: '/tree/main/blocks',
+    path: 'blocks',
     headers: {
       'X-GitHub-Api-Version': '2022-11-28'
     }
