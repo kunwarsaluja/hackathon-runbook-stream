@@ -12,4 +12,3 @@ imported-docs
 */*/.DS_Store
 
 .github/runbook/node_modules/*
-runbook/*

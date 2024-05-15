@@ -1,0 +1,13 @@
+The patch file contains changes made to the `scripts/lib-franklin.js` file. Here are the top 5 most notable changes:
+
+1. New function `toSentenceCase`: This function converts a given text to sentence case. It splits the text by hyphens or other non-word characters, capitalizes the first letter of each word, and converts the rest to lowercase.
+
+2. Change in `decorateButtons` function: The `decorateButtons` function has been modified to add additional behavior to anchor elements. If the anchor element's `href` attribute matches a predefined pattern, it will be treated as a video link and a video modal will be created to play the video. The video modal is appended to the block container. The function also adds appropriate classes to anchor elements to style them as buttons, based on their parent and sibling elements.
+
+3. New function `buildVideoModal`: This function creates a video modal overlay for playing videos. It takes a video URL and video type as input and creates the necessary HTML elements to display the video. The video modal is appended to the 'block' container.
+
+4. Change in `toggleVideoOverlay` function: The `toggleVideoOverlay` function has been modified to handle the opening and closing of the video overlay modal. When the overlay is opened, the video starts playing, and when the overlay is closed, the video is paused.
+
+5. Changes in `decorateSections` function: The `decorateSections` function has been modified to add additional metadata attributes to sections based on the section metadata. The new attributes include `data-theme`, `data-id`, and `data-title`. The function also removes the section metadata from the DOM after processing it.
+
+These changes enhance the functionality of the script by adding support for creating video modals, converting text to sentence case, and adding additional metadata to sections.

@@ -5,6 +5,7 @@
     "diff": "^5.2.0",
     "node-fetch": "^3.3.2",
     "octokit": "^4.0.2",
+    "openai": "^4.47.1",
     "yaml": "^2.4.2"
   },
   "type": "module"

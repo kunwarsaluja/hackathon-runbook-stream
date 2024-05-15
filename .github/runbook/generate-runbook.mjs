@@ -4,6 +4,7 @@ import { promises as fs } from 'fs';
 import YAML from 'yaml'
 import fetch from 'node-fetch';
 import { createTwoFilesPatch } from 'diff';
+import OpenAI from "openai";
 
 const OCTOKIT_BASE_PARAMS = {
   owner: "kunwarsaluja",
@@ -91,10 +92,52 @@ const getBoilerplateCustomizations = async (octokit) => {
   });
   const origFileContents = Buffer.from(firstFileContents.data.content, 'base64').toString('utf-8');
   const patch = createTwoFilesPatch('initialCommit', 'current', origFileContents, coreLibFileContents);
+  let patchInfo = '';
+  const openAiApiKey = '';
+  const openai = new OpenAI({
+    organization: 'org-zTsg71rFSzvIlKf9rmeKYhwj',
+    apiKey: openAiApiKey,
+  });
+  const assistant = await openai.beta.assistants.create({
+    name: 'Helix Developer',
+    instructions: 'You are a helix VIP project lead. Your job is to interpret code changes made during the project to determine the notable changes.',
+    tools: [{ type: 'code_interpreter' }],
+    model: 'gpt-3.5-turbo-16k'
+  });
+  const thread = await openai.beta.threads.create();
+  const message = await openai.beta.threads.messages.create(
+    thread.id,
+    {
+      role: 'user',
+      content: `Here is a patch file of changes to ${coreLibFile}.
+      Can you help me determine what has changed and why?
+      Please provide the main headings for the top 5 most notable changes
+      ---
+      ${patch}
+      `
+    }
+  );
+  const run = await openai.beta.threads.runs.createAndPoll(
+    thread.id,
+    {
+      assistant_id: assistant.id,
+      instructions: "Please address the user as Helix Dev."
+    }
+  );
+  if (run.status === 'completed') {
+    const messages = await openai.beta.threads.messages.list(
+      run.thread_id
+    );
+
+    patchInfo = messages.data[0].content[0].text.value;
+  } else {
+    console.log(run.status);
+  }
 
   return {
     coreLibrary: coreLibFile.replace('scripts/', ''),
     patch,
+    patchInfo,
     commits: {
       count: coreLibCommits.length,
       details: coreLibCommits.map((commit) => ({
