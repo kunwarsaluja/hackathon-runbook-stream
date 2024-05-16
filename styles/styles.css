@@ -686,7 +686,7 @@ main .section > div:last-child {
   letter-spacing: .2em;
   line-height: var(--line-height-120);
   margin: 0 0 var(--spacer-element-07);
-  text-transform: uppercase;
+  
 }
 
 .section-top div > h1 {

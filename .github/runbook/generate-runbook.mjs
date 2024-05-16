@@ -244,7 +244,7 @@ const getCDNInfo = async (prodUrl) => {
     }
   );
   const cname = await response.json();
-  return cname['payload'];
+  return {'CDN' : cname['payload'][0]};
 };
 
 const getIntegrations = async (octokit, source) => {
@@ -272,14 +272,14 @@ const main = async (token, targetDirectory) => {
   const data = {};
   data.environmentInfo = await getEnvironmentInfo();
   data.pluginInfo = await getPluginInfo();
-  data.boilerplateCustomizations = await getBoilerplateCustomizations(octokit);
+ data.boilerplateCustomizations = await getBoilerplateCustomizations(octokit);
 
   /* disabled for current runbook iteration
   data.blocks = await getBlockInfo(octokit);
   */
   data.customIndexDefinitions = await getHelixQueryYaml(octokit);
-  data.cdn = await getCDNInfo(data.environmentInfo.prodUrl);
-  data.integrations = await getIntegrations(octokit, 'scripts/delayed.js');
+  data.dns = await getCDNInfo(data.environmentInfo.prodUrl);
+ data.integrations = await getIntegrations(octokit, 'scripts/delayed.js');
   data.customSitemap = await getHelixSitemapYaml(octokit);
   try {
     fs.access(targetDirectory, fs.constants.W_OK);
