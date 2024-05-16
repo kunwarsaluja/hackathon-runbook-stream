@@ -13,6 +13,36 @@ const OCTOKIT_BASE_PARAMS = {
   },
 };
 
+const execChatGPT = async (instructions, prompt) => {
+  const openAiApiKey = '';
+  const openai = new OpenAI({
+    organization: 'org-zTsg71rFSzvIlKf9rmeKYhwj',
+    apiKey: openAiApiKey,
+  });
+  const assistant = await openai.beta.assistants.create({
+    name: 'Helix Developer',
+    instructions,
+    tools: [{ type: 'code_interpreter' }],
+    model: 'gpt-3.5-turbo-16k',
+  });
+  const thread = await openai.beta.threads.create();
+  const message = await openai.beta.threads.messages.create(thread.id, {
+    role: 'user',
+    content: prompt,
+  });
+  const run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+    assistant_id: assistant.id,
+    instructions: 'Please address the user as Helix Dev.',
+  });
+  if (run.status === 'completed') {
+    const messages = await openai.beta.threads.messages.list(run.thread_id);
+
+    return messages.data[0].content[0].text.value;
+  } else {
+    return run.status;
+  }
+};
+
 const readRepoFileContents = async (filePath) => {
   try {
     const fileContents = await fs.readFile(`../../${filePath}`, {
@@ -109,40 +139,14 @@ const getBoilerplateCustomizations = async (octokit) => {
     origFileContents,
     coreLibFileContents
   );
-  let patchInfo = '';
-  const openAiApiKey = '';
-  const openai = new OpenAI({
-    organization: 'org-zTsg71rFSzvIlKf9rmeKYhwj',
-    apiKey: openAiApiKey,
-  });
-  const assistant = await openai.beta.assistants.create({
-    name: 'Helix Developer',
-    instructions:
-      'You are a helix VIP project lead. Your job is to interpret code changes made during the project to determine the notable changes.',
-    tools: [{ type: 'code_interpreter' }],
-    model: 'gpt-3.5-turbo-16k',
-  });
-  const thread = await openai.beta.threads.create();
-  const message = await openai.beta.threads.messages.create(thread.id, {
-    role: 'user',
-    content: `Here is a patch file of changes to ${coreLibFile}.
-      Can you help me determine what has changed and why?
-      Please provide the main headings for the top 5 most notable changes
-      ---
-      ${patch}
-      `,
-  });
-  const run = await openai.beta.threads.runs.createAndPoll(thread.id, {
-    assistant_id: assistant.id,
-    instructions: 'Please address the user as Helix Dev.',
-  });
-  if (run.status === 'completed') {
-    const messages = await openai.beta.threads.messages.list(run.thread_id);
-
-    patchInfo = messages.data[0].content[0].text.value;
-  } else {
-    console.log(run.status);
-  }
+  const patchInfo = await execChatGPT(
+    'You are a helix VIP project lead. Your job is to interpret code changes made during the project to determine the notable changes.',
+    `Here is a patch file of changes to ${coreLibFile}.
+    Can you help me determine what has changed and why?
+    Please provide the main headings for the top 5 most notable changes
+    ---
+    ${patch}`,
+  );
 
   return {
     coreLibrary: coreLibFile.replace('scripts/', ''),
@@ -244,44 +248,13 @@ const getIntegrations = async (octokit, source) => {
   source = source || 'scripts/delayed.js';
   const srcFileContents = await readRepoFileContents(source);
   //console.log(srcFileContents);
-  // openAPI
-  // setup
-  const openAiApiKey = '';
-  const openai = new OpenAI({
-    organization: 'org-I5ylbdRu3QPELgrhDQFgtr1l',
-    apiKey: openAiApiKey,
-  });
-  // set assistant and creat a conversation thread
-  const assistant = await openai.beta.assistants.create({
-    name: 'Helix Developer',
-    instructions:
-      'You are a helix VIP project lead. Your job is to identify thirdparty integrations in the project code.',
-    tools: [{ type: 'code_interpreter' }],
-    model: 'gpt-3.5-turbo-16k',
-  });
-  const thread = await openai.beta.threads.create();
-  // setup the message to be sent
-  const message = await openai.beta.threads.messages.create(thread.id, {
-    role: 'user',
-    content: `Please provide the main headings summarizing the  third-party integrations based on source file ${source}
+  const integrationsResponse = await execChatGPT(
+    'You are a helix VIP project lead. Your job is to identify thirdparty integrations in the project code.',
+    `Please provide the main headings summarizing the  third-party integrations based on source file ${source}
      -----
     ${srcFileContents}
-      `,
-  });
-  let integrationsResponse;
-  // sent the message and capture the response
-  const run = await openai.beta.threads.runs.createAndPoll(thread.id, {
-    assistant_id: assistant.id,
-    instructions: 'Please address the user as Helix Dev.',
-  });
-  if (run.status === 'completed') {
-    const messages = await openai.beta.threads.messages.list(run.thread_id);
-
-    integrationsResponse = messages.data[0].content[0].text.value;
-  } else {
-    console.log(run.status);
-  }
-
+    `,
+  );
   const integrations = {
     message: integrationsResponse,
   };
