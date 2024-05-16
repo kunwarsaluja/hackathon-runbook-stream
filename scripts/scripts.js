@@ -375,7 +375,7 @@ async function buildBreadcrumb() {
 }
 
 async function buildRunBook(main) {
-  const resp = await fetch('https://main--hackathon-runbook-stream--kunwarsaluja.hlx.live/runbook/runbook-info.json');
+  const resp = await fetch('/runbook/runbook-info.json');
   if (resp.ok) {
     const json = await resp.json();
     const jsonMap = new Map(Object.entries(json));
