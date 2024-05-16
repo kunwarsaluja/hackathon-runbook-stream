@@ -32,6 +32,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           openAiApiKey: ${{ secrets.OPENAI_SECRET_KEY }}
+          openAiOrg: ${{ secrets.OPENAI_ORG }}
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
