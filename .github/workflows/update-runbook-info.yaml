@@ -2,7 +2,7 @@ name: Update Runbook Info
 on:
   workflow_dispatch:
 jobs:
-  use_api_via_script:
+  update_runbook_info_script:
     runs-on: ubuntu-latest
     permissions:
       statuses: read
