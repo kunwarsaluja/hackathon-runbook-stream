@@ -177,6 +177,26 @@ const getBlockInfo = async (octokit) => {
   return blockName;
 };
 
+const getHelixSitemapYaml = async (octokit) => {
+  let customSitemap = false;
+  try {
+      const resp = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+      ...OCTOKIT_BASE_PARAMS,
+      path: 'helix-sitemap.yaml',
+    });
+    if(resp.status === 200) {
+      customSitemap = true;
+    }
+  } catch (e) {
+    console.error(e.message);
+  }
+  if (customSitemap) {
+    return {'customSitemap' : true, 'URL' : `https://raw.githubusercontent.com/${OCTOKIT_BASE_PARAMS.owner}/${OCTOKIT_BASE_PARAMS.repo}/main/helix-sitemap.yaml`};
+  } else {
+    return {'customSitemap' : false};
+  }
+};
+
 const getHelixQueryYaml = async (octokit) => {
   let customIndexDefinitions = false;
   try {
@@ -284,6 +304,7 @@ const main = async (token, targetDirectory) => {
   data.customIndexDefinitions = await getHelixQueryYaml(octokit);
   data.cdn = await getCDNInfo(data.environmentInfo.prodUrl);
   data.integrations = await getIntegrations(octokit, 'scripts/delayed.js');
+  data.customSitemap = await getHelixSitemapYaml(octokit);
   try {
     fs.access(targetDirectory, fs.constants.W_OK);
   } catch {
