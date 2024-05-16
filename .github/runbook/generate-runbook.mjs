@@ -19,7 +19,7 @@ const execChatGPT = async (instructions, prompt) => {
     return 'no api key';
   }
   const openai = new OpenAI({
-    organization: 'org-zTsg71rFSzvIlKf9rmeKYhwj',
+    organization: process.env.openAiOrg || 'org-zTsg71rFSzvIlKf9rmeKYhwj',
     apiKey: openAiApiKey,
   });
   const assistant = await openai.beta.assistants.create({
