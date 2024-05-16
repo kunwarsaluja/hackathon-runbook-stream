@@ -15,6 +15,9 @@ const OCTOKIT_BASE_PARAMS = {
 
 const execChatGPT = async (instructions, prompt) => {
   const openAiApiKey = process.env.openAiApiKey;
+  if (!openAiApiKey) {
+    return 'no api key';
+  }
   const openai = new OpenAI({
     organization: 'org-zTsg71rFSzvIlKf9rmeKYhwj',
     apiKey: openAiApiKey,
