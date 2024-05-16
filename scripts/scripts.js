@@ -374,6 +374,24 @@ async function buildBreadcrumb() {
   }
 }
 
+async function buildRunBook(main) {
+  const resp = await fetch('https://main--hackathon-runbook-stream--kunwarsaluja.hlx.live/runbook/runbook-info.json');
+  if (resp.ok) {
+    const json = await resp.json();
+    const jsonMap = new Map(Object.entries(json));
+    main.querySelectorAll('code').forEach((el) => {
+      const innerText = el.innerText.trim();
+      const outerKey = innerText.replace('$', '').split('.')[0];
+      const innerKey = innerText.replace('$', '').split('.')[1];
+      if (innerKey !== null) {
+        el.innerText = jsonMap.get(outerKey)[innerKey];
+      } else {
+        el.innerText = jsonMap.get(outerKey);
+      }
+    });
+  }
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -386,7 +404,8 @@ function buildAutoBlocks(main) {
     buildDocumentUrl(main);
     buildTags(main);
     buildPublicationInfo();
-    buildPageDivider(main);
+    //buildPageDivider(main);
+    buildRunBook(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
