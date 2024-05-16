@@ -14,7 +14,7 @@ const OCTOKIT_BASE_PARAMS = {
 };
 
 const execChatGPT = async (instructions, prompt) => {
-  const openAiApiKey = '';
+  const openAiApiKey = process.env.openAiApiKey;
   const openai = new OpenAI({
     organization: 'org-zTsg71rFSzvIlKf9rmeKYhwj',
     apiKey: openAiApiKey,
@@ -289,5 +289,4 @@ const main = async (token, targetDirectory) => {
   );
 };
 
-const token = process.argv[2];
 main(process.env.TOKEN, '../../runbook').catch((e) => console.error(e));
